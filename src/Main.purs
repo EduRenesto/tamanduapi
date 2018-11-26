@@ -14,9 +14,5 @@ import Node.HTTP (Server)
 import Ru (Menu, thisWeek)
 
 --main :: Effect Server
-main = launchAff do
-    w <- thisWeek
-    case w of
-        Nothing -> liftEffect $ log "erro"
-        Just menu -> liftEffect $ log menu.fri.lunch
-        --run 8080 
+main = do
+    run 8080 

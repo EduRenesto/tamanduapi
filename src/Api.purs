@@ -7,10 +7,16 @@ import Effect (Effect)
 import Effect.Console (log)
 import Node.Express.App (App, listenHttp, get)
 import Node.Express.Response (send)
+import Node.Express.Handler (Handler)
 import Node.HTTP (Server)
 
+ruHandler :: Handler
+ruHandler = do
+    send $ "ajsdkasjd"
+
 app :: App
-app = get "/" $ send "hehehe"
+app = do
+    get "/api/v1/ru" ruHandler
 
 run :: Int -> Effect Server
 run port = do
