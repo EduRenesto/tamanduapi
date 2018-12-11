@@ -27,6 +27,7 @@ type Menu = { mon :: MenuDay
             , sat :: MenuDay
              }
 
+
 menuUrl :: String
 menuUrl = "http://proap.ufabc.edu.br/nutricao-e-restaurantes-universitarios/cardapio-semanal"
 
@@ -97,16 +98,4 @@ thisWeek = do
     case body of
         Nothing -> pure $ Nothing
         Just html -> pure $ Just $ parseMenu html
-
-
-
-
-
-
-
-
-
-
-
-
 
